@@ -9,7 +9,7 @@ const usersQuery = loader('./users.graphql');
 
 export default function api() {
   const client = new ApolloClient({
-    uri: 'http://localhost:3000/graphql',
+    uri: process.env.REACT_APP_GRAPHQL_END_POINT,
     cache: new InMemoryCache(),
     credentials: 'same-origin'
   });
