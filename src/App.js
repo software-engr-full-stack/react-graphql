@@ -9,10 +9,10 @@ function App() {
   const [data, setData] = useState();
 
   useEffect(() => {
-    api().then((data) => {
-      setData(data);
-    })
-  }, [])
+    api().then((apiData) => {
+      setData(apiData);
+    });
+  }, []);
 
   if (!data) return <div>Loading...</div>;
 

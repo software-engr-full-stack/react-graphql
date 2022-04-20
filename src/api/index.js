@@ -14,15 +14,13 @@ export default function api() {
     credentials: 'same-origin'
   });
 
-  return client.query({
-    query: usersQuery
-  })
-  .then(result => {
-    const users = result.data.users.map((user) => ({
-      ...user,
-      data: JSON.parse(user.data.replace('=>' ,':'))
-    }));
+  return client.query({ query: usersQuery })
+    .then((result) => {
+      const users = result.data.users.map((user) => ({
+        ...user,
+        data: JSON.parse(user.data.replace('=>', ':'))
+      }));
 
-    return { users };
-  });
+      return { users };
+    });
 }
