@@ -1,7 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
 
+// import query from './query.graphql';
+import api from './api/index';
+
 function App() {
+  api();
+  // console.log({ query });
+
   return (
     <div className="App">
       <header className="App-header">
