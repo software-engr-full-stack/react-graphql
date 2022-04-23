@@ -3,5 +3,10 @@ query {
     id
     name
     data
+    resources {
+      id
+      name
+      data
+    }
   }
 }
