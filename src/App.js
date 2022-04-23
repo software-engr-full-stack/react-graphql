@@ -25,7 +25,19 @@ function App() {
         </p>
         <pre>
           {
-            data.users.map(({ name, id }) => (<div key={id}>{name}</div>))
+            data.users.map(({ name, id, resources }) => (
+              <div key={id}>
+                {name}: [
+                {
+                  resources.map((res, ix) => (
+                    <span key={res.id}>
+                      {res.name}{ ix < (resources.length - 1) ? ', ' : '' }
+                    </span>
+                  ))
+                }
+                ]
+              </div>
+            ))
           }
         </pre>
       </header>
